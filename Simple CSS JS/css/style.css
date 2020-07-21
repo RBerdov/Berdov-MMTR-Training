@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&family=Sora:wght@300;600&display=swap');
+
+body {
+    background-color: rgb(223, 224, 231);
+    font-family: 'Sora', sans-serif;
+}
+
+.main-info {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.main-info__label {
+    font-family: 'Rowdies', cursive;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.main-info__text {
+    text-align: justify;
+}
