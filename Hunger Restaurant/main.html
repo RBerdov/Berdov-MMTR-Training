@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Hungry People</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header class="main-info">
+            <div class="main-info__menu">
+                <nav class="main-info__menu-navigation">
+                    <a href="#" class="main-info__menu-item">home</a>
+                    <a href="#about" class="main-info__menu-item">about</a>
+                    <a href="#team" class="main-info__menu-item">team</a>
+                    <a href="#book" class="main-info__menu-item">booking</a>
+                </nav>
+                <img src="img/logo.png" class="main-logo">
+                <nav class="main-info__menu-navigation">
+                    <a href="#menu" class="main-info__menu-item">menu</a>
+                    <a href="#galerie" class="main-info__menu-item">galerie</a>
+                    <a href="#events" class="main-info__menu-item">events</a>
+                    <a href="#contact" class="main-info__menu-item">contact</a>
+                </nav>
+            </div>
+            <div class="main-info__content">
+                <aside class="main-info__schedule">
+                    <p class="main-info__shedule-text">
+                        Mon - Fri: 8PM - 10PM, Sat - Sun: 8PM - 3AM 
+                    </p>
+                </aside>
+                <hr class="main-info__separator">
+                <hr class="main-info__middle-separator">
+                <div class="main-info__label">
+                    <h1 class="main-info__restaurant">restaurant</h1>
+                    <h2 class="main-info__restaurant-name">hungry people</h2>
+                    <hr class="text-separator">
+                    <div class="main-info__button-collection">
+                        <button class="main-info__button">book table</button>
+                        <button class="main-info__button">explore</button>
+                    </div>
+                    <a class="main-info__go-down"><img src="img/go-down.png"></a>
+                </div>
+                <hr class="main-info__separator">
+                <aside class="main-info__social-networks">
+                    <a href="#" class="main-info__networks-button"><img src="img/fb-logo.png"></a>
+                    <a href="#" class="main-info__networks-button"><img src="img/twitter-logo.png"></a>
+                    <a href="#" class="main-info__networks-button"><img src="img/instagram-logo.png"></a>
+                </aside>
+            </div>
+        </header>
+        <section class="main-section" id="about">
+            <div class="main-section__content">
+                <div class="text-container">
+                    <h2 class="title" >about us</h2>
+                    <hr class="text-separator">
+                    <strong class="main-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.
+                    </strong>
+                    <small class="main-text">
+                        Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.
+                    </small>
+                </div>
+                <div class="picture-group">
+                    <img class="main-picture" src="img/about-img.png">
+                    <div class="decorative-square decorative-square__left" ></div>
+                </div>
+            </div>
+        </section>
+        <section class="main-section team">
+            <hr class="team__decorative-sep left-line">
+            <hr class="team__decorative-sep middle-line">
+            <hr class="team__decorative-sep right-line">
+            <h1 class="main-title" id="team">our team</h1>
+            <div class="main-section__content">
+                <div class="picture-group">
+                    <div class="decorative-square decorative-square__right"></div>
+                    <img class="main-picture" src="img/chef.png">
+                </div>
+                <div class="text-container">
+                    <h2 class="title white-text">master chef</h2>
+                    <hr class="text-separator">
+                    <strong class="main-text white-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.
+                    </strong>
+                    <small class="main-text white-text">
+                        Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.
+                    </small>
+                </div>
+            </div>
+        </section>
+        <section class="main-section">
+            <div class="main-section__content">
+                <div class="text-container">
+                    <h2 class="title" id="book">book a table</h2>
+                    <hr class="text-separator">
+                    <form class="booking__form">
+                        <input type="text" class="booking__input" placeholder="Name">
+                        <input type="email" class="booking__input" placeholder="Email">
+                        <input type="tel" class="booking__input" placeholder="Phone">
+                        <select class="booking__input booking__select">
+                            <option value="" disabled selected class="booking__option">People</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        <input type="date" class="booking__input">
+                        <input type="time" class="booking__input">
+                        <input type="submit" class="booking__submit" value="book now">
+                    </form>
+                </div>
+                <div class="picture-group">
+                    <img class="main-picture" src="img/book-a-table.png">
+                    <div class="decorative-square decorative-square__left"></div>
+                </div>
+            </div>
+            <p class="booking__info">
+                Mon - Fri: <b>8PM - 10PM</b>, Sat - Sun: <b>8PM - 3AM</b>, Phone: <b>+40 729 131 637/+40 726 458 782</b>
+            </p>
+        </section>
+        <section class="main-section specialities">
+            <hr class="team__decorative-sep left-line">
+            <hr class="team__decorative-sep middle-line">
+            <hr class="team__decorative-sep right-line">
+            <h1 class="main-title">specialities</h1>
+            <div class="main-section__content">
+                <div class="picture-group">
+                    <div class="decorative-square decorative-square__right"></div>
+                    <img class="main-picture" src="img/pancake.png">
+                </div>
+                <div class="text-container">
+                    <h2 class="title white-text">chocolate pancakes</h2>
+                    <hr class="text-separator">
+                    <strong class="main-text white-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.
+                    </strong>
+                    <small class="main-text white-text">
+                        Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.
+                    </small>
+                </div>
+            </div>
+            <div class="food-controls">
+                <button class="food-controls__button"></button>
+                <button class="food-controls__button"></button>
+                <button class="food-controls__button"></button>
+            </div>
+        </section>
+        <section class="main-section">
+            <h2 class="title" id="menu">delicious menu</h2>
+            <hr class="text-separator">
+            <strong class="main-text center-text"> 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.
+            </strong>
+            <nav class="food-menu">
+                <span class="food-menu__item">soup</span>
+                <hr class="food-menu__separator">
+                <span class="food-menu__item">pizza</span>
+                <hr class="food-menu__separator">
+                <span class="food-menu__item">pasta</span>
+                <hr class="food-menu__separator">
+                <span class="food-menu__item">desert</span>
+                <hr class="food-menu__separator">
+                <span class="food-menu__item">wine</span>
+                <hr class="food-menu__separator">
+                <span class="food-menu__item">beer</span>
+                <hr class="food-menu__separator">
+                <span class="food-menu__item">drinks</span>
+            </nav>
+            <div class="dishes-list">
+                <div class="dishes-list__element">
+                    <span class="dishes-list__dish-name">pizza quatro stragony . . . . 55,68 usd</span>
+                    <small class="dishes-list__dish-description">Integer ullamcorper neque eu purus euismod</small>
+                </div>
+                <div class="dishes-list__element">
+                    <span class="dishes-list__dish-name">pizza quatro stragony . . . . 55,68 usd</span>
+                    <small class="dishes-list__dish-description">Integer ullamcorper neque eu purus euismod</small>
+                </div>
+                <div class="dishes-list__element">
+                    <span class="dishes-list__dish-name">pizza quatro stragony . . . . 55,68 usd</span>
+                    <small class="dishes-list__dish-description">Integer ullamcorper neque eu purus euismod</small>
+                </div>
+                <div class="dishes-list__element">
+                    <span class="dishes-list__dish-name">pizza quatro stragony . . . . 55,68 usd</span>
+                    <small class="dishes-list__dish-description">Integer ullamcorper neque eu purus euismod</small>
+                </div>
+                <div class="dishes-list__element">
+                    <span class="dishes-list__dish-name">pizza quatro stragony . . . . 55,68 usd</span>
+                    <small class="dishes-list__dish-description">Integer ullamcorper neque eu purus euismod</small>
+                </div>
+                <div class="dishes-list__element">
+                    <span class="dishes-list__dish-name">pizza quatro stragony . . . . 55,68 usd</span>
+                    <small class="dishes-list__dish-description">Integer ullamcorper neque eu purus euismod</small>
+                </div>
+                <div class="dishes-list__element">
+                    <span class="dishes-list__dish-name">pizza quatro stragony . . . . 55,68 usd</span>
+                    <small class="dishes-list__dish-description">Integer ullamcorper neque eu purus euismod</small>
+                </div>
+                <div class="dishes-list__element">
+                    <span class="dishes-list__dish-name">pizza quatro stragony . . . . 55,68 usd</span>
+                    <small class="dishes-list__dish-description">Integer ullamcorper neque eu purus euismod</small>
+                </div>
+                <div class="dishes-list__element">
+                    <span class="dishes-list__dish-name">pizza quatro stragony . . . . 55,68 usd</span>
+                    <small class="dishes-list__dish-description">Integer ullamcorper neque eu purus euismod</small>
+                </div>
+                <div class="dishes-list__element">
+                    <span class="dishes-list__dish-name">pizza quatro stragony . . . . 55,68 usd</span>
+                    <small class="dishes-list__dish-description">Integer ullamcorper neque eu purus euismod</small>
+                </div>
+                <div class="dishes-list__element">
+                    <span class="dishes-list__dish-name">pizza quatro stragony . . . . 55,68 usd</span>
+                    <small class="dishes-list__dish-description">Integer ullamcorper neque eu purus euismod</small>
+                </div>
+                <div class="dishes-list__element">
+                    <span class="dishes-list__dish-name">pizza quatro stragony . . . . 55,68 usd</span>
+                    <small class="dishes-list__dish-description">Integer ullamcorper neque eu purus euismod</small>
+                </div>
+            </div>
+        </section>
+        <section class="main-section events">
+            <hr class="team__decorative-sep left-line">
+            <hr class="team__decorative-sep middle-line">
+            <hr class="team__decorative-sep right-line">
+            <h1 class="main-title" id="events">private events</h1>
+            <div class="main-section__content">
+                <div class="picture-group">
+                    <div class="decorative-square events__left-square"></div>
+                    <figure class="events__item">
+                        <img class="main-picture events__picture" src="img/wendings.png">
+                        <figcaption class="events__event-name">wendings</figcaption>
+                    </figure>
+                </div>
+                <div class="picture-group">
+                    
+                    <figure class="events__item events__item-right">
+                        <figcaption class="events__event-name events__event-name-reverse">corporate pzrties</figcaption>
+                        <img class="main-picture events__picture" src="img/corporate.png">
+                        
+                    </figure>
+                    <div class="decorative-square events__right-square"></div>
+                </div>
+            </div>
+            <span class="events__info">For private events please call: <strong>+40 729 131 637/+40 726 458 782</strong> or use the contact form.</span>
+        </section>
+        <div class="galerie">
+            <img class="galerie__picture" src="img/galerie-pic1.png">
+            <img class="galerie__picture" src="img/galerie-pic2.png">
+            <img class="galerie__picture" src="img/galerie-pic3.png">
+            <img class="galerie__picture" src="img/galerie-pic4.png">
+        </div>
+        <section class="main-section">
+            <h2 class="title">contacts</h2>
+            <hr class="text-separator">
+            <strong class="main-text center-text"> 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.
+            </strong>
+            <form class="contacts__form">
+                <input type="text" class="contacts__input" placeholder="Name">
+                <input type="email" class="contacts__input" placeholder="Email">
+                <input type="tel" class="contacts__input" placeholder="Phone">
+                <textarea class="contacts__message" placeholder="Message"></textarea>
+                <p class="contacts__info">
+                    <strong class="info-symbol">&#x27a4</strong>
+                        5th London Boulevard, U.K. 
+                    <strong class="info-symbol">✆</strong> 
+                        +40 729 131 637/+40 726 458 782 
+                    <strong class="info-symbol">✉</strong> 
+                        office@mindblister.com 
+                </p>
+                <input type="submit" class="contacts__submit" value="send message">
+            </form>
+        </section>
+        <div class="map">
+
+        </div>
+        <footer class="footer">
+            <p class="footer__content">© Copyright <strong>Mindblister</strong> 2019</p>
+        </footer>
+        <script src="js/script.js"></script>
+    </body>
+</html>
