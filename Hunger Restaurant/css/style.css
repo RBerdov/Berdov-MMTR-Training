@@ -754,11 +754,6 @@
         padding-bottom: 0;
     }
 
-    .special-image {
-        box-shadow: 0px 0px 50px #000000;
-        padding: 0;
-        border-radius: 5px;
-    }
 
     .main-info__menu-item {
         text-decoration: none;
@@ -1159,6 +1154,14 @@
         border-radius: 5px;
     }
 
+    .special-image {
+        box-shadow: 0px 0px 50px #000000;
+        padding: 0;
+        margin: 7%;
+        border-radius: 5px;
+    }
+
+
 }
 
 @media only screen and (max-width: 900px) and (min-width: 500px) {
@@ -1170,11 +1173,6 @@
         padding-bottom: 0;
     }
 
-    .special-image {
-        box-shadow: 0px 0px 50px #000000;
-        padding: 0;
-        border-radius: 5px;
-    }
 
     .main-info__menu-navigation {
         max-height: unset;
@@ -1441,6 +1439,13 @@
 
 }
 
+.special-image {
+    box-shadow: 0px 0px 50px #000000;
+    padding: 0;
+    margin: 7%;
+    border-radius: 5px;
+}
+
 @media only screen and (max-width: 1300px) and (min-width: 900px) {
     .main-picture {
         width: 350px;
@@ -1448,11 +1453,7 @@
         padding: 5%;
     }
 
-    .special-image {
-        box-shadow: 0px 0px 50px #000000;
-        padding: 0;
-        border-radius: 5px;
-    }
+    
 
     .decorative-square {
         width: 170px;
@@ -1516,6 +1517,13 @@
         text-align: center;
         text-transform: uppercase;
     }
+
+    .special-image {
+        box-shadow: 0px 0px 50px #000000;
+        padding: 0;
+        margin: auto;
+        border-radius: 5px;
+    }
 }
 
 @media only screen and (max-width: 3000px) and (min-width: 1800px) {
@@ -1531,12 +1539,7 @@
         border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
     }
 
-    .special-image {
-        box-shadow: 0px 0px 50px #000000;
-        padding: 0;
-        border-radius: 5px;
-    }
-
+    
     .main-info__restaurant {
         font-family: Open Sans;
         font-style: normal;
@@ -1752,6 +1755,14 @@
         align-items: center;
         width: 50%;
     }
+
+    .special-image {
+        box-shadow: 0px 0px 50px #000000;
+        padding: 0;
+        margin: auto;
+        border-radius: 5px;
+    }
+
 
 
 
