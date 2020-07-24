@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>Hungry People</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body>
+    <body onload="galerieInterval()">
         <header class="main-info">
             <div class="main-info__menu">
                 <nav class="main-info__menu-navigation">
@@ -38,7 +39,7 @@
                         <button class="main-info__button">book table</button>
                         <button class="main-info__button">explore</button>
                     </div>
-                    <a class="main-info__go-down"><img src="img/go-down.png"></a>
+                    <a class="main-info__go-down"><img class="go-down_arrow"src="img/go-down.png"></a>
                 </div>
                 <hr class="main-info__separator">
                 <aside class="main-info__social-networks">
@@ -108,7 +109,7 @@
                     </form>
                 </div>
                 <div class="picture-group">
-                    <img class="main-picture" src="img/book-a-table.png">
+                    <img class="main-picture special-image" src="img/book-a-table.png">
                     <div class="decorative-square decorative-square__left"></div>
                 </div>
             </div>
@@ -122,25 +123,25 @@
             <hr class="team__decorative-sep right-line">
             <h1 class="main-title">specialities</h1>
             <div class="main-section__content">
-                <div class="picture-group">
+                <div class="picture-group" id="switch-picture">
                     <div class="decorative-square decorative-square__right"></div>
-                    <img class="main-picture" src="img/pancake.png">
+                    <img class="main-picture" src="img/pancake.png" id="switch-picture-content">
                 </div>
-                <div class="text-container">
-                    <h2 class="title white-text">chocolate pancakes</h2>
+                <div class="text-container" id="switch-text">
+                    <h2 class="title white-text" id="switch-text-title">chocolate pancakes</h2>
                     <hr class="text-separator">
-                    <strong class="main-text white-text">
+                    <strong class="main-text white-text" id="switch-text-main">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.
                     </strong>
-                    <small class="main-text white-text">
+                    <small class="main-text white-text" id="switch-text-add">
                         Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.
                     </small>
                 </div>
             </div>
             <div class="food-controls">
-                <button class="food-controls__button"></button>
-                <button class="food-controls__button"></button>
-                <button class="food-controls__button"></button>
+                <button class="food-controls__button" onclick="galerieSwitch(1)"></button>
+                <button class="food-controls__button" onclick="galerieSwitch(2)"></button>
+                <button class="food-controls__button" onclick="galerieSwitch(3)"></button>
             </div>
         </section>
         <section class="main-section">
@@ -240,14 +241,14 @@
             </div>
             <span class="events__info">For private events please call: <strong>+40 729 131 637/+40 726 458 782</strong> or use the contact form.</span>
         </section>
-        <div class="galerie">
+        <div class="galerie" id="galerie">
             <img class="galerie__picture" src="img/galerie-pic1.png">
             <img class="galerie__picture" src="img/galerie-pic2.png">
             <img class="galerie__picture" src="img/galerie-pic3.png">
             <img class="galerie__picture" src="img/galerie-pic4.png">
         </div>
         <section class="main-section">
-            <h2 class="title">contacts</h2>
+            <h2 class="title" id="contact">contacts</h2>
             <hr class="text-separator">
             <strong class="main-text center-text"> 
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.
