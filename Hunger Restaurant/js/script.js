@@ -54,7 +54,7 @@ showContent = (id) => {
             break;
         case 3:
             console.log(switchId, "3");
-            pic.src = "./img/pancake.png";
+            pic.src = "./img/about-img.png";
             picGroup.style = "opacity: 1;  transition: opacity 1s, visibility 0s linear 1s;";;
             txtGroup.style = "opacity: 1;  transition: opacity 1s, visibility 0s linear 1s;";;
             break;

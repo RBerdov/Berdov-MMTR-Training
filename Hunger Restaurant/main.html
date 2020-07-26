@@ -61,7 +61,7 @@
                         Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.
                     </small>
                 </div>
-                <div class="picture-group">
+                <div class="picture-group-light">
                     <img class="main-picture" src="img/about-img.png">
                     <div class="decorative-square decorative-square__left" ></div>
                 </div>
@@ -73,7 +73,7 @@
             <hr class="team__decorative-sep right-line">
             <h1 class="main-title" id="team">our team</h1>
             <div class="main-section__content">
-                <div class="picture-group">
+                <div class="picture-group-dark">
                     <div class="decorative-square decorative-square__right"></div>
                     <img class="main-picture" src="img/chef.png">
                 </div>
@@ -108,7 +108,7 @@
                         <input type="submit" class="booking__submit" value="book now">
                     </form>
                 </div>
-                <div class="picture-group">
+                <div class="picture-group-light">
                     <img class="main-picture special-image" src="img/book-a-table.png">
                     <div class="decorative-square decorative-square__left"></div>
                 </div>
@@ -123,7 +123,7 @@
             <hr class="team__decorative-sep right-line">
             <h1 class="main-title">specialities</h1>
             <div class="main-section__content">
-                <div class="picture-group" id="switch-picture">
+                <div class="picture-group-dark" id="switch-picture">
                     <div class="decorative-square decorative-square__right"></div>
                     <img class="main-picture" src="img/pancake.png" id="switch-picture-content">
                 </div>
@@ -139,9 +139,9 @@
                 </div>
             </div>
             <div class="food-controls">
-                <button class="food-controls__button" onclick="galerieSwitch(1)"></button>
-                <button class="food-controls__button" onclick="galerieSwitch(2)"></button>
-                <button class="food-controls__button" onclick="galerieSwitch(3)"></button>
+                <button class="food-controls__button" onclick="galerieSwitch(1)" id="specialities-button1"></button>
+                <button class="food-controls__button" onclick="galerieSwitch(2)" id="specialities-button2"></button>
+                <button class="food-controls__button" onclick="galerieSwitch(3)" id="specialities-button3"></button>
             </div>
         </section>
         <section class="main-section">
@@ -222,20 +222,21 @@
             <hr class="team__decorative-sep right-line">
             <h1 class="main-title" id="events">private events</h1>
             <div class="main-section__content">
-                <div class="picture-group">
-                    <div class="decorative-square events__left-square"></div>
+                <div class="events__picture-group-left">
+                    <img class="main-picture" src="img/wendings.png">
+                    <!-- <div class="decorative-square events__left-square"></div>
                     <figure class="events__item">
-                        <img class="main-picture events__picture" src="img/wendings.png">
-                        <figcaption class="events__event-name">wendings</figcaption>
-                    </figure>
-                </div>
-                <div class="picture-group">
-                    
-                    <figure class="events__item events__item-right">
-                        <figcaption class="events__event-name events__event-name-reverse">corporate pzrties</figcaption>
-                        <img class="main-picture events__picture" src="img/corporate.png">
                         
-                    </figure>
+                        <figcaption class="events__event-name">wendings</figcaption>
+                    </figure> -->
+                </div>
+                <div class="events__picture-group-right">
+                    <img class="main-picture events__picture" src="img/corporate.png">
+                    <!-- <figure class="events__item events__item-right">
+                        <figcaption class="events__event-name events__event-name-reverse">corporate pzrties</figcaption>
+                        
+                        
+                    </figure> -->
                     <div class="decorative-square events__right-square"></div>
                 </div>
             </div>
