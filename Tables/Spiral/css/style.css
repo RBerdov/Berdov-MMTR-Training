@@ -1,0 +1,84 @@
+.grid-container {
+    width: 700px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: 
+    "up-outside up-outside up-outside up-outside up-outside up-outside up-outside"
+    "left-outside up-inside up-inside up-inside up-inside up-inside right-outside"
+    "left-outside left-middle up-middle up-middle up-middle right-middle right-outside"
+    "left-outside left-middle left-center up-center right-center right-middle right-outside"
+    "left-outside left-middle down-center down-center right-center right-middle right-outside"
+    "left-outside down-inside down-inside down-inside down-inside right-middle right-outside"
+    "down-outside down-outside down-outside down-outside down-outside down-outside right-outside";
+    grid-auto-rows: 100px;
+    grid-auto-columns: 100px;
+}
+
+div {
+    border: 5px solid black;
+
+}
+.up-outside {
+    grid-area: up-outside;
+    background-color: chartreuse;
+}
+
+.left-outside {
+    grid-area: left-outside;
+    background-color: rgb(158, 233, 84);
+}
+
+.up-inside {
+    grid-area: up-inside;
+    background-color: limegreen;
+}
+
+.right-outside {
+    grid-area: right-outside;
+    background-color: greenyellow;
+}
+
+.left-middle {
+    grid-area: left-middle;
+    background-color: rgb(1, 161, 36);
+}
+
+.left-center {
+    grid-area: left-center;
+    background-color: darkgreen;
+}
+
+.up-center {
+    grid-area: up-center;
+    background-color: rgb(28, 114, 39);
+}
+
+.right-center {
+    grid-area: right-center;
+    background-color: green;
+}
+
+.right-middle {
+    grid-area: right-middle;
+    background-color: forestgreen;
+}
+
+.down-center {
+    grid-area: down-center;
+    background-color: yellowgreen;
+}
+
+.up-middle {
+    grid-area: up-middle;
+    background-color: rgb(30, 131, 30);
+}
+
+.down-inside {
+    grid-area: down-inside;
+    background-color: rgb(55, 175, 0);
+}
+
+.down-outside {
+    grid-area: down-outside;
+    background-color: rgb(78, 138, 0);
+}
