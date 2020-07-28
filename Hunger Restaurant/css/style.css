@@ -902,10 +902,11 @@
 
 @media only screen and (max-width: 500px) and (min-width: 300px) {
     .main-info__menu {
-        height: 155px;
+        height: 205px;
         display: flex;
+        flex-direction: column;
         padding: 3%;
-        padding-bottom: 0;
+        /* padding-bottom: 0; */
     }
 
 
@@ -927,11 +928,11 @@
         max-height: unset;
         height: fit-content;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-around;
-        width: 35%;
+        width: 85%;
         padding: 2.3%;
-        font-size: 12px;
+        font-size: 14px;
         border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
     }
 
@@ -1315,7 +1316,7 @@
 
     .booking__input {
         width: 100%;
-        padding: 3%;
+        padding: 5%;
         margin: 1%;
         background: #E5E5E5;
         outline: none;
@@ -1333,7 +1334,7 @@
         cursor: pointer;
         width: 100%;
         margin: 1%;
-        padding: 4%;
+        padding: 7%;
         outline: none;
         border: none;
         background: #E8C300;
@@ -1397,7 +1398,7 @@
         margin: 8%;
         font-style: normal;
         font-weight: bold;
-        font-size: 12px;
+        font-size: 15px;
         line-height: 18px;
         display: flex;
         align-items: center;
@@ -1421,28 +1422,34 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        align-self: center;
         justify-content: space-around;
         align-items: center;
-        width: 80%;
+        width: 90%;
+        margin-right: 0;
+        margin-left: -2%;
+        margin: 0;
     }
 
     .contacts__input {
-        width: 100%;
-        padding: 2%;
-        margin: 1%;
+        width: 98%;
+        padding: 5%;
+        margin-bottom: 1%;
         background: #E5E5E5;
         outline: none;
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 5px;
+        max-width: 90%;
     }
 
     .contacts__message {
-        width: 100%;
+        width: 96%;
         padding: 2%;
-        margin: 1%;
+        margin: 0;
         background: #E5E5E5;
         outline: none;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        height: 120px;
+        border: none;
         border-radius: 5px;
     }
 
@@ -1450,8 +1457,8 @@
         width: 100%;
         font-style: normal;
         font-weight: bolder;
-        font-size: 8px;
-        line-height: 8px;
+        font-size: 12px;
+        line-height: 15px;
         display: flex;
         word-break: break-all;
         align-items: center;
@@ -1466,7 +1473,8 @@
         cursor: pointer;
         width: 100%;
         margin: 1%;
-        padding: 2%;
+        padding-bottom: 7%;
+        padding-top: 7%;
         outline: none;
         border: none;
         background: #E8C300;
