@@ -72,3 +72,66 @@
     padding: 3%;
     margin: 3%;
 }
+
+.accordion__item-header {
+    cursor: pointer;
+    width: 200px;
+    margin: 0 auto;
+    background-color: darkcyan;
+    height: 40px;
+    font-size: 16px;
+    color: white;
+    padding: 1%;
+    text-align: center;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+
+
+}
+
+
+
+.accordion__item-content {
+    display: flex;
+    margin: 0 auto;
+    width: 200px;
+    height: fit-content;
+    padding: 1%;
+    border: 2px solid;
+    background-color: lightblue;
+
+}
+
+.tree {
+    width: 200px;
+    margin: 2% auto;
+    background-color: lightblue;
+    padding: 2%;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.tree__button-close {
+    border: none;
+    color: black;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+.tree__button-close:hover {
+    color: darkcyan;
+}
+
+.tree__button-open {
+    border: none;
+    color: black;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+.tree__button-open:hover {
+    color: darkcyan;
+}
