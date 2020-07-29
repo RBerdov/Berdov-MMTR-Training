@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Component Library</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body >
+        <div class="tree-container" id="tree-container" ></div>
+        <div class="accordion-container"></div>
+        <div class="alerts">
+            
+            <div><button class="test-error">Вызвать ошибку</button><button class="test-confirm">Подтвердить действие</button></div>
+        </div>
+        <template id="accordion">
+            <div >
+                <div class="accordion__item">
+                  <div class="accordion__item-header" style="cursor: pointer;">Заголовок 1</div>
+                  <div class="accordion-item-content" style="display: none;">Контент 1...</div></div>
+                <div class="accordion__item">
+                    <div class="accordion__item-header" style="cursor: pointer;">Заголовок 2</div>
+                    <div class="accordion-item-content" style="display: none;">Контент 2...</div></div>
+              <div class="accordion__item">
+                <div class="accordion__item-header" style="cursor: pointer;">Заголовок 3</div>
+                  <div class="accordion-item-content" style="display: none;">Контент 3...</div></div>
+              </div>
+        </template>
+        <template id="tree">
+            <div class="tree">
+                <ul class='tree__root'><div >
+                    
+                    <li class="tree__main-branch">
+                        Я элемент
+                    </li>
+                    <li class="tree__main-branch">
+                        Я элемент
+                    </li>
+                    <li class="tree__main-branch">
+                        Я элемент
+                    </li>
+                    <li class="tree__main-branch">
+                        Я элемент
+                    </li>
+                    <li class="tree__main-branch">
+                        <ul class='tree__root'><div >
+                            <li class="tree__main-branch">
+                                Я элемент
+                            </li>
+                            <li class="tree__main-branch">
+                                Я элемент
+                            </li>
+                            <li class="tree__main-branch">
+                                Я элемент
+                            </li>
+                            <li class="tree__main-branch">
+                                <ul class='tree__root'><div >
+                                        <li class="tree__main-branch">
+                                            Я элемент
+                                        </li>
+                                        <li class="tree__main-branch">
+                                            Я элемент
+                                        </li>
+                                        <li class="tree__main-branch">
+                                            Я элемент
+                                        </li>
+                                        <li class="tree__main-branch">
+                                            Я элемент
+                                        </li>
+                                    </div>
+                                    <button id="2" class="tree__button-close">⇧⇧⇧</button><button id="1" class="tree__button-open hidden">⇩⇩⇩</button></ul>                                   
+                                    </li>
+                            <li class="tree__main-branch">
+                                 Я элемент
+                            </li>
+                        </div>                        
+                        <button id="2" class="tree__button-close">⇧⇧⇧</button><button id="1" class="tree__button-open hidden">⇩⇩⇩</button></ul>  
+                    </li>
+                </div>                
+                <button id="2" class="tree__button-close">⇧⇧⇧</button><button id="1" class="tree__button-open hidden">⇩⇩⇩</button></ul>                
+            </div>
+        </template>
+        <script src="js/alerts.js"></script>
+        <script src="js/tree.js"></script>
+        <script src="js/accordion.js"></script>
+    </body>
+</html>
