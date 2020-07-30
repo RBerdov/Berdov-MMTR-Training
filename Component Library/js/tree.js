@@ -24,11 +24,9 @@ closeTreeBranch = (btn) => {
     const btnClose = btn;
     const root = btnClose.closest(".tree__root");
     console.log(root);
-    const btnOpen = btn.nextSibling;
     const content = root.firstChild;
-    btnOpen.classList.remove('hidden');
-    btnClose.classList.add('hidden');
-    content.classList.add('hidden');
+    btnClose.classList.toggle('up')
+    content.classList.toggle('hidden');
     
 }
 

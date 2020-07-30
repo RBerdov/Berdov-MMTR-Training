@@ -1,5 +1,10 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .hidden {
     display: none;
+    transition: 500ms;
 }
 
 .show {
@@ -104,7 +109,7 @@
 }
 
 .tree {
-    width: 200px;
+    width: 300px;
     margin: 2% auto;
     background-color: lightblue;
     padding: 2%;
@@ -112,8 +117,21 @@
     border-radius: 5px;
 }
 
+.tree__root {
+
+}
+
+.tree__root::first-line {
+    font-weight: bolder;
+}
+
+.tree__main-branch {
+    list-style: none;
+}
+
 .tree__button-close {
     border: none;
+    font-size: 20px;
     color: black;
     background-color: transparent;
     outline: none;
@@ -135,3 +153,9 @@
 .tree__button-open:hover {
     color: darkcyan;
 }
+
+.up {
+    font-size: 20px;
+    transform: rotate(180deg);
+}
+
