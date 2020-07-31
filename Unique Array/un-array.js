@@ -9,34 +9,33 @@ let arr = [
     { name: "e", id: 3 }]
   
 
+// let newArr = [];
+
+// getUnique = () => {
+//     arr.forEach(el => {
+           
+//     });
+// }
 
 let uniqueNames = arr.reduce((acc, item) => {
+    console.log(item);
     if (acc.map[item.name])
         return acc;
-  
+        console.log(acc);
+    
     acc.map[item.name] = true; 
+    console.log(acc);
     acc.uniqueNames.push(item);
     return acc; 
+    console.log(acc);
     }, {
       map: {}, 
       uniqueNames: [] 
+      
     })
     .uniqueNames;
+    console.log(uniqueNames);
 
-let newArr = uniqueNames.reduce((acc, item) => {
-    if (acc.map[item.id])
-        return acc;
-      
-    acc.map[item.id] = true; 
-    acc.newArr.push(item);
-    return acc; 
-    }, {
-        map: {}, 
-        newArr: [] 
-    })
-    .newArr;
 
-  
-  console.log(newArr);
 
 

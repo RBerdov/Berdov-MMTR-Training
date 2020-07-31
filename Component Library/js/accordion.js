@@ -17,29 +17,33 @@ let item3 = {
 
 // function Accordion(options) {
 //     let elem;
+//     let elems = [];
 
 //     getElem = () => {
 //         if (!elem) render();
 //         return elem;
 //     }
 
+    
+
 //     function render() {
-//         elem = document.createElement('div');
+//         let root = document.createElement('div');
         
 //         options.items.forEach(e => {
-//             const accItem = document.createElement('div');
-//             elem.appendChild(accItem);
-//             accItem.className = "accordion-item";
-//             const itemTitle = accItem.createElement('div');
+//             elem = document.createElement('div');
+//             root.appendChild(elem);
+//             elem.className = "accordion-item";
+//             const itemTitle = document.createElement('div');
 //             itemTitle.className = "accordion__item-header";
 //             itemTitle.style.cursor = "pointer";
 //             itemTitle.textContent = e.title;
-//             accItem.appendChild(itemTitle);
-//             const itemContent = accItem.createElement('div');
+//             elem.appendChild(itemTitle);
+//             const itemContent = document.createElement('div');
 //             itemContent.className = "accordion__item-content";
 //             itemContent.style.display = "none";
 //             itemContent.textContent = e.content;
-//             accItem.appendChild(itemContent);
+//             elem.appendChild(itemContent);
+//             elems.push(elem);
 //         });
         
     
@@ -47,19 +51,20 @@ let item3 = {
 //           return false;
 //         };
 
-//         elem.onclick = openContent(elem);
 //     }
 
 
     
 //     openContent = (el) => {
-        
-//         document.querySelectorAll(".accordion__item").forEach(e => {
+//             console.log(el);
+//             console.log(elems);
+//         elems.forEach(e => {
 //             console.log(e);
 //             console.log(e.lastChild);
 //             e.lastChild.style.display = "none";
 //         });
 //         const item = el.closest(".accordion__item");
+//         console.log(item);
 //         item.lastChild.style.display = "block";
         
         
@@ -69,7 +74,8 @@ let item3 = {
 //     this.openContent = openContent;
 //     this.getElem = getElem;
 
-//     elem.onclick = openContent(elem);
+
+//     elem.onclick = openContent(getElem());
 
 
 // };
@@ -79,7 +85,7 @@ let item3 = {
 // });
 
 // window.onload = () => {
-//     document.body.appendChild(menu.getElem());
+//     document.body.appendChild(accordion.getElem());
 // }
 
 addAccordion = () => {
