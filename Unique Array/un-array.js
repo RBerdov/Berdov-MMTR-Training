@@ -27,7 +27,6 @@ let uniqueNames = arr.reduce((acc, item) => {
     console.log(acc);
     acc.uniqueNames.push(item);
     return acc; 
-    console.log(acc);
     }, {
       map: {}, 
       uniqueNames: [] 

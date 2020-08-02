@@ -3,7 +3,7 @@ showError = () => {
     err.innerHTML = "<div class='alert alerts__error'><span>Ошибка!</span><span class='alerts__close'>x</span></div>"
     document.body.append(err);
     const darkScreen = document.createElement("div");
-    darkScreen.innerHTML = '<div id="darker" style="width:100%; height:100%; background:#000; position: absolute; top: 0; padding: 0; z-index:3; opacity:0.2; "></div>';
+    darkScreen.innerHTML = '<div id="darker" style="position: fixed; width:100%; height:100%; background:#000;  top: 0; padding: 0; z-index:3; opacity:0.2; "></div>';
     document.body.append(darkScreen);
     document.querySelectorAll(".alerts__close").forEach(e => {
         console.log(e);
@@ -19,7 +19,7 @@ showConfirm = () => {
     conf.innerHTML = "<div class='alert alerts__confirm'><span>Подтвердить?</span><span class='alerts__close'>x</span><span class='alerts__confirm-accept'>Да</span><span class='alerts__confirm-decline'>Нет</span></div>"
     document.body.append(conf);
     const darkScreen = document.createElement("div");
-    darkScreen.innerHTML = '<div id="darker" style="width:100%; height:100%; background:#000; position: absolute; top: 0; padding: 0; z-index:3; opacity:0.2; "></div>';
+    darkScreen.innerHTML = '<div id="darker" style="width:100%; height:100%; background:#000; position: fixed; top: 0; padding: 0; z-index:3; opacity:0.2; "></div>';
     document.body.append(darkScreen);
     document.querySelectorAll(".alerts__close").forEach(e => {
         console.log(e);
