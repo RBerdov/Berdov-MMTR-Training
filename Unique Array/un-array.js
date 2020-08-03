@@ -3,7 +3,7 @@ let arr = [
     { name: "b", id: 1 },
     { name: "c", id: 3 },
     { name: "d", id: 4 },
-    { name: "c", id: 5 },
+    { name: "c", id: 3 },
     { name: "a", id: 6 }, 
     { name: "d", id: 7 }, 
     { name: "e", id: 3 }]
@@ -13,8 +13,11 @@ let arr = [
 
     let newArr = [];
 
+    //Правильный вариант
+
     getUnique = (arr) => {
         console.log(arr);
+        
         arr.forEach(el => {
             if(newArr.length == 0) 
             {
@@ -22,10 +25,9 @@ let arr = [
                 console.log(newArr);
             }
             else {
-
+                     
                     console.log(JSON.stringify(el));
-                    if(JSON.stringify(el) != JSON.stringify(newEl)) {
-                        console.log(newArr);
+                    if(newArr.some(newEl => JSON.stringify(el) == JSON.stringify(newEl)) == false) {
                         newArr.push(el);
                     }
                
@@ -35,32 +37,34 @@ let arr = [
         return newArr;
     }
 
-
-    deepEqual = (a, b) => {
-        if (a === b) {
-            return true;
-        }
-     
-        if (a == null || typeof(a) != "object" ||
-            b == null || typeof(b) != "object")
-        {
-            return false;
-        }
-     
-        var propertiesInA = 0, propertiesInB = 0;
-        for (var property in a) {
-            propertiesInA += 1;
-        }
-        for (var property in b) {
-            propertiesInB += 1;
-            if (!(property in a) || !deepEqual(a[property], b[property])) {
-                return false;        
-            }
-        }        
-        return propertiesInA == propertiesInB;
-    }
-
     console.log(getUnique(arr));
+
+
+    // deepEqual = (a, b) => {
+    //     if (a === b) {
+    //         return true;
+    //     }
+     
+    //     if (a == null || typeof(a) != "object" ||
+    //         b == null || typeof(b) != "object")
+    //     {
+    //         return false;
+    //     }
+     
+    //     var propertiesInA = 0, propertiesInB = 0;
+    //     for (var property in a) {
+    //         propertiesInA += 1;
+    //     }
+    //     for (var property in b) {
+    //         propertiesInB += 1;
+    //         if (!(property in a) || !deepEqual(a[property], b[property])) {
+    //             return false;        
+    //         }
+    //     }        
+    //     return propertiesInA == propertiesInB;
+    // }
+
+
 // let newArr = [];
 
 // getUnique = () => {
