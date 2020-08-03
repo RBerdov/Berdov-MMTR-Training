@@ -46,8 +46,7 @@ function Accordion(options) {
             itemTitle.textContent = e.title;
             elem.appendChild(itemTitle);
             const itemContent = document.createElement('div');
-            itemContent.className = "accordion__item-content";
-            itemContent.style.display = "none";
+            itemContent.className = "accordion__item-content hidden-content";
             itemContent.textContent = e.content;
             elem.appendChild(itemContent);
             elems.push(elem);
@@ -69,15 +68,26 @@ function Accordion(options) {
 
     
     openContent = (el) => {
-            console.log(el);
-            console.log(elems);
-        elems.forEach(e => {
-            console.log(e);
-            console.log(e.lastChild);
-            e.lastChild.style.display = "none";
-        });
-        console.log(el.lastChild);
-        el.nextSibling.style.display = "block";
+
+        if(el.nextSibling.classList.contains('hidden-content')) {
+                console.log(el);
+                console.log(elems);
+            elems.forEach(e => {
+                console.log(e);
+                console.log(e.lastChild);
+                e.lastChild.classList.add('hidden-content');
+            });
+            console.log(el.nextSibling);
+            el.nextSibling.classList.remove('hidden-content');
+        }
+        else {
+            elems.forEach(e => {
+                console.log(e);
+                console.log(e.lastChild);
+                e.lastChild.classList.add('hidden-content');
+            });      
+        }
+        
         
         
     

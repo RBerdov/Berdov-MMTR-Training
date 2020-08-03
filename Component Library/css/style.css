@@ -159,3 +159,7 @@ body {
     transform: rotate(180deg);
 }
 
+.hidden-content {
+    display: none;
+}
+
