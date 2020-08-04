@@ -27,7 +27,7 @@ let arr = [
             else {
                      
                     console.log(JSON.stringify(el));
-                    if(newArr.some(newEl => JSON.stringify(el) == JSON.stringify(newEl)) == false) {
+                    if(newArr.some(newEl => JSON.stringify(el) === JSON.stringify(newEl)) == false) {
                         newArr.push(el);
                     }
                

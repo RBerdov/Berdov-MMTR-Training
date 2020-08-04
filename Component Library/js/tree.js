@@ -30,14 +30,23 @@ function Tree(options) {
             console.log(root);
             root.className = 'tree__root';
             elem.appendChild(root);
+            const toggleBtn = document.createElement('button');
+            toggleBtn.classList = 'tree__button-close';
+            toggleBtn.textContent = '+';
+            toggleBtn.onclick = function(event) {
+                toggleTreeBranch(event.target);
+            };
+            root.appendChild(toggleBtn);
             const contentContainer = document.createElement('div');
             contentContainer.className = 'hidden';
             root.appendChild(contentContainer);
-            const treeTitle = document.createElement('li');
+            const treeTitle = document.createElement('span');
             treeTitle.textContent = e.title;
             treeTitle.className = 'tree__main-branch';
             treeTitle.style.fontWeight = 'bold';
-            contentContainer.appendChild(treeTitle);
+            treeTitle.style.display = 'contents';
+            toggleBtn.after(treeTitle);
+            
             e.content.forEach(e => {
                 const treeElem = document.createElement('li');
                 treeElem.className = 'tree__main-branch';
@@ -47,45 +56,80 @@ function Tree(options) {
                     console.log(innerRoot);
                     innerRoot.className = 'tree__root';
                     treeElem.appendChild(innerRoot);
-                    const innerContainer = document.createElement('div');
-                    innerContainer.className = 'hidden';
-                    innerRoot.appendChild(innerContainer);
-                    const innerTitle = document.createElement('li');
-                    innerTitle.textContent = e.title;
-                    innerTitle.className = 'tree__main-branch';
-                    innerTitle.style.fontWeight = 'bold';
-                    innerContainer.appendChild(innerTitle);
-                    e.content.forEach(el => {
-                        const innerTreeElem = document.createElement('li');
-                        innerTreeElem.className = 'tree__main-branch';
-                        innerContainer.appendChild(innerTreeElem);
-                        innerTreeElem.textContent = el;
-                    });
                     const innerBtn = document.createElement('button');
                     innerBtn.classList = 'tree__button-close';
-                    innerBtn.textContent = '⮟⮟⮟';
+                    innerBtn.textContent = '+';
                     innerBtn.onclick = function(event) {
                         toggleTreeBranch(event.target);
                     };
                     innerRoot.appendChild(innerBtn);
+                    const innerTitle = document.createElement('li');
+                    innerTitle.textContent = e.title;
+                    innerTitle.className = 'tree__title';
+                    innerTitle.style.fontWeight = 'bold';
+                    innerTitle.style.display = 'contents';
+                    innerBtn.after(innerTitle);
+                    const innerContainer = document.createElement('div');
+                    innerContainer.className = 'hidden';
+                    innerRoot.appendChild(innerContainer);
+                    e.content.forEach(el => {
+                        const innerTreeElem = document.createElement('li');
+                        innerTreeElem.className = 'tree__main-branch';
+                        innerContainer.appendChild(innerTreeElem);
+                        const innerCheckbox = document.createElement('input');
+                        innerCheckbox.type = 'checkbox';
+                        innerCheckbox.name = el;
+                        innerCheckbox.id = 'confirm';
+                        innerCheckbox.checked = true;
+                        innerCheckbox.onclick = function(event) {
+                            if(event.target.checked = true) {
+                                console.log('unchecked');
+                                event.target.checked = false;
+                            }
+                            else {
+                                console.log('checked');
+                                event.target.checked = true;
+                            }
+                        };
+                        innerTreeElem.appendChild(innerCheckbox);
+                        const innerTreeLabel = document.createElement('span');
+                        innerTreeLabel.textContent = el;
+                        innerTreeLabel.style.display = 'contents';
+                        innerTreeElem.appendChild(innerTreeLabel);
+                        
+                    });
+                   
 
                 }
 
                 else {
-                    treeElem.textContent = e;
+                    const treeCheckbox = document.createElement('input');
+                    treeCheckbox.type = 'checkbox';
+                    treeCheckbox.name = e;
+                    treeCheckbox.id = 'confirm';
+                    treeCheckbox.checked = true;
+                    treeCheckbox.onclick = function(event) {
+                        if(event.target.checked = true) {
+                            console.log('unchecked');
+                            event.target.checked = false;
+                        }
+                        else {
+                            console.log('checked');
+                            event.target.checked = true;
+                        }
+                    };
+                    treeElem.appendChild(treeCheckbox);
+                    const treeLabel = document.createElement('span');
+                    treeLabel.textContent = e;
+                    treeLabel.style.display = 'contents';
+                    treeElem.appendChild(treeLabel);
                     
                 }
                 
                 
             });
             
-            const toggleBtn = document.createElement('button');
-            toggleBtn.classList = 'tree__button-close';
-            toggleBtn.textContent = '⮟⮟⮟';
-            toggleBtn.onclick = function(event) {
-                toggleTreeBranch(event.target);
-            };
-            root.appendChild(toggleBtn);
+            
 
 
             
@@ -101,8 +145,13 @@ function Tree(options) {
     toggleTreeBranch = (btn) => {
         const root = btn.closest(".tree__root");
         console.log(root);
-        const content = root.firstChild;
-        btn.classList.toggle('up')
+        const content = root.lastChild;
+        if(btn.textContent == '+'){
+            btn.textContent = '-';
+        }
+        else {
+            btn.textContent = '+';
+        }
         content.classList.toggle('hidden');
             
     }

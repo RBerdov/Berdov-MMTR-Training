@@ -129,11 +129,39 @@ body {
     list-style: none;
 }
 
+.tree__title {
+    list-style: none;
+}
+
+.tree__main-branch::before{
+    content: "";
+    display: inline-block;
+    position: relative;
+    left: 0;
+    bottom: .5em;
+    width: 15px;
+    height: 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .tree__main-branch::before {
+  height: 30px;
+  margin-top: -2%;
+  border: 1px solid #333;
+  border-width: 0 0 1px 1px
+}
+
 .tree__button-close {
-    border: none;
+    border: solid;
+    border-radius: 5px;
     font-size: 20px;
+    line-height: 5px;
     color: black;
-    background-color: transparent;
+    padding: 10px;
+    width: 1;
+    margin: 2%;
+    margin-left: -19%;
+    background-color: aliceblue;
     outline: none;
     cursor: pointer;
 }
