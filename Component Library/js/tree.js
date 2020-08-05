@@ -83,12 +83,12 @@ function Tree(options) {
                         innerCheckbox.checked = true;
                         innerCheckbox.onclick = function(event) {
                             if(event.target.checked = true) {
-                                console.log('unchecked');
-                                event.target.checked = false;
+                                console.log(event.target);
+                                innerCheckbox.checked = false;
                             }
                             else {
                                 console.log('checked');
-                                event.target.checked = true;
+                                innerCheckbox.value = true;
                             }
                         };
                         innerTreeElem.appendChild(innerCheckbox);
