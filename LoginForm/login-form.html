@@ -9,9 +9,9 @@
         <section class="login-registration">
             <form class="login">
                 <h1 class="login__title">Member Login</h1>
-                <input class="login__input" type="email" placeholder="Email">
-                <input class="login__input" type="password" placeholder="Password">
-                <input class="login__sign-in" type="submit" value="Sign In">
+                <input class="login__input" type="email" placeholder="Email" id="login-email">
+                <input class="login__input" type="password" placeholder="Password" id="login-password">
+                <input class="login__sign-in" type="submit" value="Sign In" id="login-submit">
                 <div class="login__other">
                     
                     <label class="login__remember">
@@ -23,15 +23,22 @@
             </form>
             <form class="registration">
                 <h1 class="login__title">Register</h1>
-                <input class="login__input" type="text" placeholder="Full Name">
-                <input class="login__input" type="text" placeholder="Username">
-                <input class="login__input" type="email" placeholder="Email">
-                <input class="login__input" type="password" placeholder="Password">
-                <input class="login__input" type="password" placeholder="Confirm Password">
-                <input class="login__sign-in" type="submit" value="Sign In">
+                <input class="login__input" type="text" placeholder="Full Name" id="full-name">
+                <input class="login__input" type="text" placeholder="Username" id="username">
+                <input class="login__input" type="email" placeholder="Email" id="email">
+                <input class="login__input" type="password" placeholder="Password" id="password">
+                <input class="login__input" type="password" placeholder="Confirm Password" id="confirm-password">
+                <input class="login__sign-in" type="submit" value="Submit" id="register-submit">
             </form>
 
             </form>
         </section>
+        <section class="welcome" style="display: none;">
+            <h1 class="welcome__title">Hello</h1>
+            <span class="welcome__text" id="welcome-full-name"></span>
+            <span class="welcome__text" id="welcome-username"></span>
+            <span class="welcome__text" id="welcome-email"></span>
+        </section>
+        <script src="js/script.js"></script>
     </body>
 </html>

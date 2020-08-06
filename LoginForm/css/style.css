@@ -106,3 +106,23 @@
     color: white;
     margin: 5%;
 }
+
+.welcome {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.welcome__title {
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 40px;
+    margin: 10%;
+    margin-top: 0;
+    padding: 5%;
+    width: 90%;
+    text-align: center;
+    background-color: rgb(40,128,152);
+    color: white;
+}

@@ -26,10 +26,46 @@ function Tree(options) {
 
 
         options.treeItems.forEach(e => {
+            
+            generateRoot(e, elem);
+            
+            e.content.forEach(e => {
+                const treeElem = document.createElement('li');
+                treeElem.className = 'tree__main-branch';
+                elem.querySelector('.content-container').appendChild(treeElem);
+                //Если элементом массива content является подменю (объект)
+                if(typeof e == 'object') {
+                    generateRoot(e,treeElem);
+                    e.content.forEach(el => {
+                        const innerTreeElem = document.createElement('li');
+                        innerTreeElem.className = 'tree__main-branch';
+                        treeElem.querySelector('.content-container').appendChild(innerTreeElem);
+                        generateElements(el, innerTreeElem);
+                        
+                    });
+                }
+                //Если элементом content массива - строка
+                else {
+                    generateElements(e, treeElem)
+                    
+                }
+                
+                
+            });            
+            
+        });
+
+        elem.onmousedown = function() {
+            return;
+          };
+    }
+
+    //Генерация корня меню
+    generateRoot = (e, parent) => {
             const root = document.createElement('ul');
             console.log(root);
             root.className = 'tree__root';
-            elem.appendChild(root);
+            parent.appendChild(root);
             const toggleBtn = document.createElement('button');
             toggleBtn.classList = 'tree__button-close';
             toggleBtn.textContent = '+';
@@ -38,7 +74,7 @@ function Tree(options) {
             };
             root.appendChild(toggleBtn);
             const contentContainer = document.createElement('div');
-            contentContainer.className = 'hidden';
+            contentContainer.className = 'content-container hidden';
             root.appendChild(contentContainer);
             const treeTitle = document.createElement('span');
             treeTitle.textContent = e.title;
@@ -46,102 +82,26 @@ function Tree(options) {
             treeTitle.style.fontWeight = 'bold';
             treeTitle.style.display = 'contents';
             toggleBtn.after(treeTitle);
-            
-            e.content.forEach(e => {
-                const treeElem = document.createElement('li');
-                treeElem.className = 'tree__main-branch';
-                contentContainer.appendChild(treeElem);
-                if(typeof e == 'object') {
-                    const innerRoot = document.createElement('ul');
-                    console.log(innerRoot);
-                    innerRoot.className = 'tree__root';
-                    treeElem.appendChild(innerRoot);
-                    const innerBtn = document.createElement('button');
-                    innerBtn.classList = 'tree__button-close';
-                    innerBtn.textContent = '+';
-                    innerBtn.onclick = function(event) {
-                        toggleTreeBranch(event.target);
-                    };
-                    innerRoot.appendChild(innerBtn);
-                    const innerTitle = document.createElement('li');
-                    innerTitle.textContent = e.title;
-                    innerTitle.className = 'tree__title';
-                    innerTitle.style.fontWeight = 'bold';
-                    innerTitle.style.display = 'contents';
-                    innerBtn.after(innerTitle);
-                    const innerContainer = document.createElement('div');
-                    innerContainer.className = 'hidden';
-                    innerRoot.appendChild(innerContainer);
-                    e.content.forEach(el => {
-                        const innerTreeElem = document.createElement('li');
-                        innerTreeElem.className = 'tree__main-branch';
-                        innerContainer.appendChild(innerTreeElem);
-                        const innerCheckbox = document.createElement('input');
-                        innerCheckbox.type = 'checkbox';
-                        innerCheckbox.name = el;
-                        innerCheckbox.id = 'confirm';
-                        innerCheckbox.checked = true;
-                        innerCheckbox.onclick = function(event) {
-                            if(event.target.checked = true) {
-                                console.log(event.target);
-                                innerCheckbox.checked = false;
-                            }
-                            else {
-                                console.log('checked');
-                                innerCheckbox.value = true;
-                            }
-                        };
-                        innerTreeElem.appendChild(innerCheckbox);
-                        const innerTreeLabel = document.createElement('span');
-                        innerTreeLabel.textContent = el;
-                        innerTreeLabel.style.display = 'contents';
-                        innerTreeElem.appendChild(innerTreeLabel);
-                        
-                    });
-                   
-
-                }
-
-                else {
-                    const treeCheckbox = document.createElement('input');
-                    treeCheckbox.type = 'checkbox';
-                    treeCheckbox.name = e;
-                    treeCheckbox.id = 'confirm';
-                    treeCheckbox.checked = true;
-                    treeCheckbox.onclick = function(event) {
-                        if(event.target.checked = true) {
-                            console.log('unchecked');
-                            event.target.checked = false;
-                        }
-                        else {
-                            console.log('checked');
-                            event.target.checked = true;
-                        }
-                    };
-                    treeElem.appendChild(treeCheckbox);
-                    const treeLabel = document.createElement('span');
-                    treeLabel.textContent = e;
-                    treeLabel.style.display = 'contents';
-                    treeElem.appendChild(treeLabel);
-                    
-                }
-                
-                
-            });
-            
-            
-
-
-            
-            
-            
-        });
-
-        elem.onmousedown = function() {
-            return false;
-          };
     }
 
+    //Генерация элементов меню
+    generateElements = (e, parent) => {
+        const treeCheckbox = document.createElement('input');
+        treeCheckbox.type = 'checkbox';
+        treeCheckbox.name = e;
+        treeCheckbox.id = 'confirm';
+        treeCheckbox.checked = true;
+        treeCheckbox.onchange = function(event) {
+            console.log(event.target);
+        };
+        parent.appendChild(treeCheckbox);
+        const treeLabel = document.createElement('span');
+        treeLabel.textContent = e;
+        treeLabel.style.display = 'contents';
+        parent.appendChild(treeLabel);
+    }
+
+    //Открытие и закрытие меню
     toggleTreeBranch = (btn) => {
         const root = btn.closest(".tree__root");
         console.log(root);
@@ -159,7 +119,7 @@ function Tree(options) {
     this.getElem = getElem;
 
     getElem().onclick = function() {
-        return false;
+        return;
     };
 }
 
