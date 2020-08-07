@@ -99,12 +99,14 @@
     cursor: pointer;
     color: white;
     margin: 5%;
+    font-family: sans-serif;
 }
 
 .login__alternative {
     cursor: pointer;
     color: white;
     margin: 5%;
+    font-family: sans-serif;
 }
 
 .welcome {
@@ -125,4 +127,10 @@
     text-align: center;
     background-color: rgb(40,128,152);
     color: white;
+}
+
+.welcome__text {
+    font-size: larger;
+    font-family: sans-serif;
+    margin: 2%;
 }
