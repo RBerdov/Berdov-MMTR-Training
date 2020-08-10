@@ -14,7 +14,7 @@ submitLogin = (ls) => {
     }
 
     else {
-
+        ls.querySelector('#not-filled').style.display = 'block';
     }
     
  
@@ -40,7 +40,16 @@ submitRegister = (rs) => {
             document.querySelector('#welcome-full-name').textContent = 'Your full name: ' + newUser.fullName;
             document.querySelector('#welcome-email').textContent = 'Your email: ' + newUser.email;
         }
+
+        else {
+            rs.querySelector('#confirm-incorrect').style.display = 'block';
+            confirmPass.style.border = '1px solid red';
+        }
          
+    }
+
+    else {
+        rs.querySelector('#not-filled').style.display = 'block';
     }
 
 }

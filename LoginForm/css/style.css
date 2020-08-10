@@ -134,3 +134,8 @@
     font-family: sans-serif;
     margin: 2%;
 }
+
+.login__alert {
+    font-family: sans-serif;
+    color: white;
+}
