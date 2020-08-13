@@ -1,16 +1,11 @@
 drawRectangles = (x, y, rectWidth, rectHeight) => {
-    let w = window.innerWidth;
-    console.log(w/2);
-    let h = window.innerHeight;
-    console.log(h/2);
+    let w = window.innerWidth/2 + rectWidth;
+    console.log(w);
+    let h = window.innerHeight/2 + rectHeight;
+    console.log(h);
     const rect = document.querySelector('.rectangle');
     console.log(rect);
-    rect.style.top = h/2 + y +'px';
-    rect.style.left = w/2 + x + 'px';
-    rect.style.paddingRight = rectWidth/2 + 'px';
-    rect.style.paddingLeft = rectWidth/2 + 'px';
-    rect.style.paddingTop = rectHeight/2 + 'px';
-    rect.style.paddingBottom = rectHeight/2 + 'px';
+    setRectangle(x, y, rectWidth, rectHeight, rect)
     let nextX = x;
     let nextY = y;
     for(let i = 1; i < 25; i++) {
@@ -19,12 +14,7 @@ drawRectangles = (x, y, rectWidth, rectHeight) => {
                 const newRect = document.createElement('div');
                 newRect.className = 'rectangle';
                 nextX = nextX + rectWidth;
-                newRect.style.top = h/2 + nextY + 'px';
-                newRect.style.left = w/2 + nextX + 'px';
-                newRect.style.paddingRight = rectWidth/2 + 'px';
-                newRect.style.paddingLeft = rectWidth/2 + 'px';
-                newRect.style.paddingTop = rectHeight/2 + 'px';
-                newRect.style.paddingBottom = rectHeight/2 + 'px';
+                setRectangle(nextX, nextY, rectWidth, rectHeight, newRect);
                 document.querySelector('.body').appendChild(newRect);
             }
         }
@@ -33,12 +23,7 @@ drawRectangles = (x, y, rectWidth, rectHeight) => {
                 const newRect = document.createElement('div');
                 newRect.className = 'rectangle';
                 nextX = nextX + rectWidth;
-                newRect.style.top = h/2 + nextY + 'px';
-                newRect.style.left = w/2 + nextX + 'px';
-                newRect.style.paddingRight = rectWidth/2 + 'px';
-                newRect.style.paddingLeft = rectWidth/2 + 'px';
-                newRect.style.paddingTop = rectHeight/2 + 'px';
-                newRect.style.paddingBottom = rectHeight/2 + 'px';
+                setRectangle(nextX, nextY, rectWidth, rectHeight, newRect);
                 document.querySelector('.body').appendChild(newRect);
             }
         }
@@ -47,5 +32,18 @@ drawRectangles = (x, y, rectWidth, rectHeight) => {
         nextX = x - rectWidth;
         
     } 
+}
+
+setRectangle = (x, y, w, h, rectangle) => {
+    rectangle.style.top = window.innerHeight/2 + y +'px';
+    rectangle.style.left = window.innerWidth/2 + x + 'px';
+    rectangle.style.paddingRight = w/2 + 'px';
+    rectangle.style.paddingLeft = w/2 + 'px';
+    rectangle.style.paddingTop = h/2 + 'px';
+    rectangle.style.paddingBottom = h/2 + 'px';
+}
+
+editRectangle = (x, y, w, h) => {
+    
 }
 

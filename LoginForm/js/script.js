@@ -15,6 +15,8 @@ submitLogin = (ls) => {
 
     else {
         ls.querySelector('#not-filled').style.display = 'block';
+        ls.querySelector('#not-filled').style.position = 'absolute'
+        ls.querySelector('#not-filled').style.top = '115px'
     }
     
  
@@ -43,6 +45,8 @@ submitRegister = (rs) => {
 
         else {
             rs.querySelector('#confirm-incorrect').style.display = 'block';
+            rs.querySelector('#confirm-incorrect').style.position = 'absolute';
+            rs.querySelector('#confirm-incorrect').style.top = '440px';
             confirmPass.style.border = '1px solid red';
         }
          
@@ -50,6 +54,8 @@ submitRegister = (rs) => {
 
     else {
         rs.querySelector('#not-filled').style.display = 'block';
+        rs.querySelector('#not-filled').style.position = 'absolute'
+        rs.querySelector('#not-filled').style.top = '115px'
     }
 
 }
