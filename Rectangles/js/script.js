@@ -6,11 +6,8 @@ const prevParams = {
 }
 
 drawRectangles = (x, y, rectWidth, rectHeight) => {
-    let w = window.innerWidth/2 + rectWidth;
-    console.log(w);
-    let h = window.innerHeight/2 + rectHeight;
-    console.log(h);
-    const rect = document.querySelector('.rectangle');
+     
+    const rect = document.querySelector('.center-rectangle');
     console.log(rect);
     setRectangle(x, y, rectWidth, rectHeight, rect);
     rect.style.border = '1px solid red';
@@ -48,20 +45,20 @@ setRectangle = (x, y, w, h, rectangle) => {
 } 
 
 editRectangle = () => {
-    console.log(prevParams);
-    let w = window.innerWidth/2 + rectWidth;
-    console.log(w);
-    let h = window.innerHeight/2 + rectHeight;
-    console.log(h);
-    const rect = document.querySelector('.rectangle');
+    document.querySelectorAll('.rectangle').forEach((e) => {
+        e.remove();
+    });
+    console.log(prevParams.x + parseInt(document.getElementById('x-input').value));
+    const x = prevParams.x + parseInt(document.getElementById('x-input').value);
+    const y = prevParams.y + parseInt(document.getElementById('y-input').value);
+    const rectWidth = prevParams.rectWidth + parseInt(document.getElementById('w-input').value);
+    const rectHeight = prevParams.rectHeight + parseInt(document.getElementById('h-input').value);
+    const rect = document.querySelector('.center-rectangle');
     console.log(rect);
     setRectangle(x, y, rectWidth, rectHeight, rect);
     rect.style.border = '1px solid red';
     rect.style.zIndex = '2';
-    prevParams.x = x;
-    prevParams.y = y;
-    prevParams.rectWidth = rectWidth;
-    prevParams.rectHeight = rectHeight;
+    
     let nextX = x - (13 * rectWidth);
     let nextY = y - (13 * rectHeight);
     for(let i = 1; i < 25; i++) {
@@ -79,6 +76,10 @@ editRectangle = () => {
         nextX = x - (13 * rectWidth);
         
     } 
+    prevParams.x = x;
+    prevParams.y = y;
+    prevParams.rectWidth = rectWidth;
+    prevParams.rectHeight = rectHeight;
 }
 
 document.querySelector('.edit-rectangle').addEventListener('submit', function(event) {

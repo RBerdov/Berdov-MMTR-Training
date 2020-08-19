@@ -2,6 +2,12 @@
     position: absolute;
     border: 1px solid;
 }
+
+.center-rectangle {
+    position: absolute;
+    border: 1px solid;
+}
+
 .edit-rectangle {
     display: flex;
     flex-direction: row;
