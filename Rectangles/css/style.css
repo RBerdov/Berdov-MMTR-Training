@@ -17,6 +17,8 @@
 
 .edit-rectangle__input {
     font-size: 14px;
+    border: 1px solid black;
+    outline: black;
 }
 
 .edit-rectangle__input:hover {

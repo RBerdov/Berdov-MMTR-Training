@@ -5,6 +5,8 @@ const prevParams = {
     rectHeight: 0
 }
 
+const rectangles = [];
+
 drawRectangles = (x, y, rectWidth, rectHeight) => {
      
     const rect = document.querySelector('.center-rectangle');
@@ -25,6 +27,7 @@ drawRectangles = (x, y, rectWidth, rectHeight) => {
                 newRect.className = 'rectangle';
                 nextX = nextX + rectWidth;
                 setRectangle(nextX, nextY, rectWidth, rectHeight, newRect);
+                rectangles.push({nextX, nextY, rectWidth, rectHeight});
                 document.querySelector('.body').appendChild(newRect);
             }
         
@@ -33,6 +36,8 @@ drawRectangles = (x, y, rectWidth, rectHeight) => {
         nextX = x - (13 * rectWidth);
         
     } 
+
+    console.log(rectangles);
 }
 
 setRectangle = (x, y, w, h, rectangle) => {
@@ -76,10 +81,7 @@ editRectangle = () => {
         nextX = x - (13 * rectWidth);
         
     } 
-    prevParams.x = x;
-    prevParams.y = y;
-    prevParams.rectWidth = rectWidth;
-    prevParams.rectHeight = rectHeight;
+
 }
 
 document.querySelector('.edit-rectangle').addEventListener('submit', function(event) {
