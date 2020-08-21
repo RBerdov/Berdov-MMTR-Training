@@ -7,6 +7,36 @@ const prevParams = {
 
 const rectangles = [];
 
+drawRectFigure = (x, y, rectWidth, rectHeight) => {
+    const rect = document.querySelector('.center-rectangle');
+    console.log(rect);
+    setRectangle(x, y, rectWidth, rectHeight, rect);
+    rect.style.border = '1px solid red';
+    rect.style.zIndex = '2';
+    prevParams.x = x;
+    prevParams.y = y;
+    prevParams.rectWidth = rectWidth;
+    prevParams.rectHeight = rectHeight;
+    const rightRect = document.createElement('div');
+    rightRect.className = 'rectangle';
+    let nextX = x + rectWidth;
+    let nextY = y;
+    setRectangle(nextX, nextY, rectWidth, rectHeight, rightRect)
+    document.querySelector('.body').appendChild(rightRect);
+    const leftRect = document.createElement('div');
+    leftRect.className = 'rectangle';
+    nextX = x - rectWidth;
+    nextY = y;
+    setRectangle(nextX, nextY, rectWidth, rectHeight, leftRect)
+    document.querySelector('.body').appendChild(leftRect);
+    const downRect = document.createElement('div');
+    downRect.className = 'rectangle';
+    nextX = x;
+    nextY = y + rectHeight;
+    setRectangle(nextX, nextY, rectWidth, rectHeight, downRect)
+    document.querySelector('.body').appendChild(downRect);
+}
+
 drawRectangles = (x, y, rectWidth, rectHeight) => {
      
     const rect = document.querySelector('.center-rectangle');
@@ -22,7 +52,7 @@ drawRectangles = (x, y, rectWidth, rectHeight) => {
     let nextY = y - (13 * rectHeight);
     for(let i = 1; i < 25; i++) {
         
-            for(let i2 = 1; i2 < 25; i2++) {
+            for(let i2 = 0; i2 < 25; i2++) {
                 const newRect = document.createElement('div');
                 newRect.className = 'rectangle';
                 nextX = nextX + rectWidth;
