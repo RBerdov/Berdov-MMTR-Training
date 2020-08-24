@@ -37,13 +37,13 @@ drawRectFigure = (x, y, rectWidth, rectHeight) => {
     document.querySelector('.body').appendChild(downRect);
 }
 
-drawRectangles = (x, y, rectWidth, rectHeight) => {
-     
-    const rect = document.querySelector('.center-rectangle');
-    console.log(rect);
-    setRectangle(x, y, rectWidth, rectHeight, rect);
-    rect.style.border = '1px solid red';
-    rect.style.zIndex = '2';
+
+setRectArray = (x, y, rectWidth, rectHeight) => {
+    // const rect = document.querySelector('.center-rectangle');
+    // console.log(rect);
+    // setRectangle(x, y, rectWidth, rectHeight, rect);
+    // rect.style.border = '1px solid red';
+    // rect.style.zIndex = '2';
     prevParams.x = x;
     prevParams.y = y;
     prevParams.rectWidth = rectWidth;
@@ -53,12 +53,12 @@ drawRectangles = (x, y, rectWidth, rectHeight) => {
     for(let i = 1; i < 25; i++) {
         
             for(let i2 = 0; i2 < 25; i2++) {
-                const newRect = document.createElement('div');
-                newRect.className = 'rectangle';
+                // const newRect = document.createElement('div');
+                // newRect.className = 'rectangle';
                 nextX = nextX + rectWidth;
-                setRectangle(nextX, nextY, rectWidth, rectHeight, newRect);
+                // setRectangle(nextX, nextY, rectWidth, rectHeight, newRect);
                 rectangles.push({nextX, nextY, rectWidth, rectHeight});
-                document.querySelector('.body').appendChild(newRect);
+                // document.querySelector('.body').appendChild(newRect);
             }
         
         
@@ -69,6 +69,84 @@ drawRectangles = (x, y, rectWidth, rectHeight) => {
 
     console.log(rectangles);
 }
+
+drawMesh = (x, y, rectWidth, rectHeight) => {
+    setRectArray(x, y, rectWidth, rectHeight);
+    const rect = document.querySelector('.center-rectangle');
+    console.log(rect);
+    setRectangle(x, y, rectWidth, rectHeight, rect);
+    rect.style.border = '1px solid red';
+    rect.style.zIndex = '2';
+    rectangles.forEach((el) => {
+        const newRect = document.createElement('div');
+        newRect.className = 'rectangle';
+        setRectangle(el.nextX, el.nextY, rectWidth, rectHeight, newRect);
+        document.querySelector('.body').appendChild(newRect); 
+    })
+}
+
+editMesh = () => {
+    console.log(prevParams.x + parseInt(document.getElementById('x-input').value));
+    const x = prevParams.x + parseInt(document.getElementById('x-input').value);
+    const y = prevParams.y + parseInt(document.getElementById('y-input').value);
+    const rectWidth = prevParams.rectWidth + parseInt(document.getElementById('w-input').value);
+    const rectHeight = prevParams.rectHeight + parseInt(document.getElementById('h-input').value);
+    let nextX = x - (13 * rectWidth);
+    let nextY = y - (13 * rectHeight);
+    for(let i = 1; i < 25; i++) {
+        
+            for(let i2 = 0; i2 < 25; i2++) {
+                rectangles.forEach((el) => {
+                    if (el.nextX != nextX && el.nextY != nextY) {
+                        nextX = nextX + rectWidth;
+                        rectangles.push({nextX, nextY, rectWidth, rectHeight});
+                    }
+                })
+                
+            }
+        
+        
+        nextY = nextY + rectHeight;
+        nextX = x - (13 * rectWidth);
+        
+    } 
+
+    console.log(rectangles);
+      
+}
+
+// drawRectangles = (x, y, rectWidth, rectHeight) => {
+     
+//     const rect = document.querySelector('.center-rectangle');
+//     console.log(rect);
+//     setRectangle(x, y, rectWidth, rectHeight, rect);
+//     rect.style.border = '1px solid red';
+//     rect.style.zIndex = '2';
+//     prevParams.x = x;
+//     prevParams.y = y;
+//     prevParams.rectWidth = rectWidth;
+//     prevParams.rectHeight = rectHeight;
+//     let nextX = x - (13 * rectWidth);
+//     let nextY = y - (13 * rectHeight);
+//     for(let i = 1; i < 25; i++) {
+        
+//             for(let i2 = 0; i2 < 25; i2++) {
+//                 const newRect = document.createElement('div');
+//                 newRect.className = 'rectangle';
+//                 nextX = nextX + rectWidth;
+//                 setRectangle(nextX, nextY, rectWidth, rectHeight, newRect);
+//                 rectangles.push({nextX, nextY, rectWidth, rectHeight});
+//                 document.querySelector('.body').appendChild(newRect);
+//             }
+        
+        
+//         nextY = nextY + rectHeight;
+//         nextX = x - (13 * rectWidth);
+        
+//     } 
+
+//     console.log(rectangles);
+// }
 
 setRectangle = (x, y, w, h, rectangle) => {
     rectangle.style.top = window.innerHeight/2 + y +'px';
@@ -116,6 +194,6 @@ editRectangle = () => {
 
 document.querySelector('.edit-rectangle').addEventListener('submit', function(event) {
     event.preventDefault();
-    editRectangle();
+    editMesh();
 }); 
 
